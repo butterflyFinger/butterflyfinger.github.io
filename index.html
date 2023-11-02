@@ -13,8 +13,11 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/templatemo-style.css">
-	<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
 
+	<style>
+		#more {display: none;}
+		</style>
+	
 </head>
 <body data-spy="scroll" data-target="#rock-navigation">
 	<!-- START NAVIGATION -->
@@ -216,8 +219,8 @@
 				<div class="col-md-6 col-sm-6">
 					<h2 class="title"><strong>Experience</strong></h2>
 				
-					<div class="timeline">
-						<div class="timeline-item">
+					<div>
+						<div>
 							<h3>Job Title 1</h3>
 							<p>Company Name 1</p>
 							<p>Location</p>
@@ -225,33 +228,40 @@
 							<p>Description of your responsibilities and achievements in this role.</p>
 						</div>
 				
-						<div class="timeline-item">
+						<div>
 							<h3>Job Title 2</h3>
+							<p>Company Name 2</p>
+							<p>Location</p>
+							<p>Duration: Start Date - End Date</p>
+							<p>Description of your responsibilities and achievements in this role.</p>
+							<p id="dots">...</p>
+						</div>
+
+
+						<div id="more">
+						<div>
+							<h3>Job Title 3</h3>
 							<p>Company Name 2</p>
 							<p>Location</p>
 							<p>Duration: Start Date - End Date</p>
 							<p>Description of your responsibilities and achievements in this role.</p>
 						</div>
 
-						<div class="timeline-item">
-							<h3>Job Title 2</h3>
+						<div>
+							<h3>Job Title 4</h3>
 							<p>Company Name 2</p>
 							<p>Location</p>
 							<p>Duration: Start Date - End Date</p>
 							<p>Description of your responsibilities and achievements in this role.</p>
+						</div>
 						</div>
 
-						<div class="timeline-item">
-							<h3>Job Title 2</h3>
-							<p>Company Name 2</p>
-							<p>Location</p>
-							<p>Duration: Start Date - End Date</p>
-							<p>Description of your responsibilities and achievements in this role.</p>
-						</div>
+
+						
 				
 						<!-- Additional timeline items can be dynamically added here based on your data -->
 				
-						<div id="read-more-button" class="text-center" style="display: none;">
+						<div id="btn-more" onclick="myReadMore()" class="text-center">
 							<button class="btn btn-primary">Read More</button>
 						</div>
 					</div>
@@ -262,73 +272,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- END RESUME -->
-
-	<!-- START ABOUT -->
-	<!-- <section id="about" class="tm-about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-7">
-					<div class="title">
-						<h2>This is <strong>me</strong></h2>
-						<h1 class="tm-red-text">Creative <strong>Director</strong></h1>
-					</div>
-					<p>This is free Bootstrap v3.3.4 mobile friendly layout from <a rel="nofollow" href="https://templatemo.com">templatemo</a>. Feel free to use it for your website. Credit goes to <a rel="nofollow" href="https://pixabay.com">Pixabay</a> for photos used in this template. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- END ABOUT -->
-
-	<!-- START SOCIAL -->
-	<!-- <section id="social" class="tm-social">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.3s">
-					<div class="media facebook">
-						<a href="#">
-							<div class="media-object pull-left">
-								<i class="fa fa-facebook"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading tm-social-title">Follow me on</h4>
-								<h3>Social Facebook</h3>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.6s">
-					<div class="media twitter">
-						<a href="#">
-							<div class="media-object pull-left">
-								<i class="fa fa-twitter"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading tm-social-title">Tweet me on</h4>
-								<h3>Social Twitter</h3>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.9s">
-					<div class="media pinterest">
-						<a href="#">
-							<div class="media-object pull-left">
-								<i class="fa fa-pinterest"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading tm-social-title">Pin me on</h4>
-								<h3>Social Pinterest</h3>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- END SOCIAL -->
-
 	<!-- START CONTACT -->
 	<section id="contact" class="tm-contact">
 		<div class="container">
@@ -372,22 +315,26 @@
 	<script src="js/imagesloaded.min.js"></script>
 	<script src="js/custom.js"></script>
 
-		<script>
-		$(document).ready(function(){
-			var numberOfItemsToShow = 2; // Set the number of items to show initially
-			var $timelineItems = $('.timeline-item');
+	<script>
+		function myReadMore(){
+			var dots = document.getElementById("dots")
+			var moreText = document.getElementById("more")
+			var btnMore = document.getElementById("btn-more")
 
-			// Show the first set of items
-			$timelineItems.slice(0, numberOfItemsToShow).show();
+		if (dots.style.display === "none"){
+			dots.style.display = "inline";
+			btnMore.innerHTML = "Read More";
+			moreText.style.display = "none";
+		}else {
+			dots.style.display = "none";
+			btnMore.innerHTML = "Read Less";
+			moreText.style.display = "inline";
+		}
 
-			// Show more items when "Read More" button is clicked
-			$('#read-more-button button').click(function(){
-				console.log('Button clicked')
-				$timelineItems.slice(numberOfItemsToShow).slideDown();
-				$('#read-more-button').hide(); // Hide the "Read More" button after showing all items
-			});
-		});
-		</script>
+		}
+	</script>
+	
+	
 
 </body>
 </html>
