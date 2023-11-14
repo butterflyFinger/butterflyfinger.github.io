@@ -81,7 +81,7 @@ hr {
 
 /* START HOME */
 .templatemo-home {
-  background: url('../images/home-bg.jpg');
+  background: url(../images/home-bg2.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
@@ -99,13 +99,28 @@ hr {
 }
 .tm-home-title,
  .tm-home-subtitle {
-  text-transform: uppercase;
+  text-transform: normal;
  }
 .tm-home-title { font-size: 60px; }
 .tm-home-subtitle {
-  color: #eb5424;
+  color: #111111;
   font-weight: bold;
-  padding-bottom: 40px;
+  text-align: left;
+  padding-bottom: 0px;
+  letter-spacing: 2px;
+}
+.tm-home-subtitle2 {
+  color: #111111;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 0px;
+  letter-spacing: 2px;
+}
+.tm-home-subtitle3 {
+  color: #111111;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 0px;
   letter-spacing: 2px;
 }
 .tm-view-more-btn {
